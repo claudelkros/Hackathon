@@ -555,7 +555,7 @@ ul.sub-menu > li.dropdown:hover > ul.sub-sub-menu {
 
 #home-slider .slide-text{
     position: absolute;
-    top: 160px;
+    top: 50px;
     left: 0;
     width: 450px;
 }
@@ -583,14 +583,15 @@ ul.sub-menu > li.dropdown:hover > ul.sub-sub-menu {
 }
 #home-slider .slider-forms {
     position: absolute;
-    right: 110px;
+    right: 90px;
     bottom: 25px;
+    width: 40%;
 }
 #home-slider .slider-forms__login {
     position: absolute;
-    right: 110px;
-    bottom: 25px;
-    width: 45%;
+    right: 80px;
+    bottom: 160px;
+    width: 35%;
 }
 .animate-in .slider-house {
     -webkit-animation: bounceInDown 500ms ease-in-out 800ms both;
@@ -620,6 +621,9 @@ ul.sub-menu > li.dropdown:hover > ul.sub-sub-menu {
 }
 
 #home-slider .slider-birds2 {
+    position: absolute;
+    right: 40px;
+    bottom: 150px;
 }
 
 .animate-in .slider-birds2 {
@@ -2702,4 +2706,14 @@ span.stButton_gradient,
 }
 .nav li > a{
     color: orangered;
+}
+
+.slider-logo{
+    height: 104px;
+    width: 204px;
+}
+.slider-logo-1{
+    height: 104px;
+    width: 204px;
+    margin-top: -30px;
 }

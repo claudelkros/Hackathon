@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>HACKATON</title>
+    <title>HACKATHON - {{ title }}</title>
     {% load static %}
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     {% load static %}
@@ -15,9 +15,9 @@
     {% load static %}
     <link href="{% static 'css/lightbox.css' %}" rel="stylesheet">
     {% load static %}
-	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
     {% load static %}
-	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
@@ -36,79 +36,79 @@
 </head>
 <body>
 
-	<header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                   <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 overflow">
+                <div class="social-icons pull-right">
+                    <ul class="nav nav-pills">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
-             </div>
+            </div>
         </div>
-        <div class="navbar navbar-inverse" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    </div>
+    <div class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                    <a class="navbar-brand" href="{% url 'main_app:index' %}">
-                    	<h1><img src="{% static 'images/logo.png' %}" alt="Hackathon"></h1>
-                    </a>
+                <a class="navbar-brand" href="{% url 'main_app:index' %}">
+                    <h1><img src="{% static 'images/logo.png' %}" alt="Hackathon"></h1>
+                </a>
 
-                </div>
-                {% if user.is_authenticated %}
+            </div>
+            {% if user.is_authenticated %}
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li class="dropdown"><a href="health.html">SANTE <i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="pharmacie.html">PHARMACIE DE GARDE</a></li>
-                                    <li><a href="carnet.html">CARNET</a></li>
-                                    <li><a href="medecin_naturelle.html">MEDECINE NATURELLE</a></li>
-                                    <li><a href="premier_soin.html">PREMIERS SOINS</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="community.html">SERVICES RURAUX <i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="e_rural.html">E-RURAL</a></li>
-                                    <li><a href="service_accompagnement.html">SERVICE D'ACCOMPAGNEMENT</a></li>
-                                    <li><a href="agriculture.html">AGRICULTURE</a></li>
-                                    <li><a href="elevage.html">ELEVAGE</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="mediatheques.html">MEDIATHEQUES <i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li class="dropdown"><a href="universite.html">UNIVERSITES<i class="fa fa-angle-down"></i></a>
-                                        <ul role="sub-sub-menu" class="sub-sub-menu">
-                                            <li><a href="universite.html">COURS</a></li>
-                                            <li><a href="memoires.html">MEMOIRES</a></li>
-                                            <li><a href="fax.html">FAX</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="ecoles.html">ECOLES<i class="fa fa-angle-down"></i></a>
-                                            <ul role="sub-sub-menu" class="sub-sub-menu">
-                                            <li><a href="primary.html">PRIMAIRES</a></li>
-                                            <li><a href="secondaire.html">SECONDAIRES</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                             <li class="dropdown"><a href="health.html">{{ username }} <i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="{% url 'main_app:logout' %}">DECONNEXION</a></li>
-                                </ul>
-                            </li>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown"><a href="health.html">SANTE <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="pharmacie.html">PHARMACIE DE GARDE</a></li>
+                                <li><a href="carnet.html">CARNET</a></li>
+                                <li><a href="medecin_naturelle.html">MEDECINE NATURELLE</a></li>
+                                <li><a href="premier_soin.html">PREMIERS SOINS</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="community.html">SERVICES RURAUX <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="e_rural.html">E-RURAL</a></li>
+                                <li><a href="service_accompagnement.html">SERVICE D'ACCOMPAGNEMENT</a></li>
+                                <li><a href="agriculture.html">AGRICULTURE</a></li>
+                                <li><a href="elevage.html">ELEVAGE</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="mediatheques.html">MEDIATHEQUES <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li class="dropdown"><a href="universite.html">UNIVERSITES<i class="fa fa-angle-down"></i></a>
+                                    <ul role="sub-sub-menu" class="sub-sub-menu">
+                                        <li><a href="universite.html">COURS</a></li>
+                                        <li><a href="memoires.html">MEMOIRES</a></li>
+                                        <li><a href="fax.html">FAX</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="ecoles.html">ECOLES<i class="fa fa-angle-down"></i></a>
+                                    <ul role="sub-sub-menu" class="sub-sub-menu">
+                                        <li><a href="primary.html">PRIMAIRES</a></li>
+                                        <li><a href="secondaire.html">SECONDAIRES</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="health.html">{{ username }} <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="{% url 'main_app:logout' %}">DECONNEXION</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="search">
@@ -120,47 +120,38 @@
                     </form>
                 </div>
 
-                {% endif %}
-            </div>
+            {% endif %}
         </div>
-    </header>
-    <!--/#header-->
+    </div>
+</header>
+<!--/#header-->
 
-        <section id="home-slider">
-        <div class="container">
-            <div class="row">
-                <div class="main-slider">
-                    <div class="slide-text">
-                        <h1>We Are Creative Nerds</h1>
-                        <p>Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.</p>
-                        <a href="{% url 'main_app:register' %}" class="btn btn-common">SIGN UP</a>
-                        <a href="{% url 'main_app:login' %}" class="btn btn-common active">LOGIN</a>
-                    </div>
-                <!--/Home Where we import content part-->
-                    {% block content %}
+<section id="home-slider">
+    <div class="container">
+        <div class="row">
+            {% block content %}
 
-                    {% endblock %}
-                </div>
-            </div>
+            {% endblock %}
         </div>
-        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
-    </section>
-    <!--/#home-slider-->
+    </div>
+    <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+</section>
+<!--/#home-slider-->
 
 
 <footer class="">
 
 </footer>
 <!--/#footer-->
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/lightbox.min.js' %}"></script>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/lightbox.min.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

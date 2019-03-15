@@ -83,22 +83,33 @@
         margin-top: 30px;
     }
     #home-slider .main-slider {
-        height: 250px;
+        height: 400px;
     }
     #home-slider .slide-text {
         top: 0;
         width: 50%;
     }
+    #home-slider .slider-forms__login{
+        top: -5px;
+    }
     #home-slider h1 {
         margin-top: 0;
     }
     #home-slider .slider-hill {
-        width: 400px;
+        width: 600px;
     }
     #home-slider .slider-house {
         width: 250px;
         right: 90px;
-        bottom: -20px;
+        bottom: 0px;
+    }
+    #house-slider .slider-forms{
+        width: 2% !important;
+        right: 90px;
+        bottom: 80px;
+        width: 250px;
+        right: 90px;
+        bottom: 0px;
     }
     #home-slider .slider-sun {
         right: 255px;
@@ -248,7 +259,7 @@
         margin: 50px 20px;
     }
     #home-slider .main-slider {
-        height: 500px;
+        height: 600px;
     }
     #home-slider .slide-text {
         top: 0;
@@ -266,6 +277,9 @@
     #home-slider .slider-sun {
         right: 50%;
         margin-right: 60px;
+    }
+    #home-slider .slider-forms__login{
+        top: 200px;
     }
     #home-slider .slider-birds1 {
         width: 70px;

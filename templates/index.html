@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
+    <div class="main-slider">
+        <div class="slide-text text-justify">
+            <h1>We Are Creative Nerds</h1>
+            <p>Boudin doner frankfurter pig. Cow shank bresaola pork landjaeger biltong beef ribs shankle chicken andouille.</p>
+            <a href="{% url 'main_app:register' %}" class="btn btn-common">SIGN UP</a>
+            <a href="{% url 'main_app:login' %}" class="btn btn-common active">LOGIN</a>
+        </div>
+        <!--/Home Where we import content part-->
+    </div>
     {% load static %}
     <img src="{% static 'images/home/slider/hill.png' %}" class="slider-hill" alt="slider image">
     <img src="{% static 'images/home/slider/house.png' %}" class="slider-house" alt="slider image">

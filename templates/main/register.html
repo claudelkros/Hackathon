@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="slider-forms slider-house form-group offset-md-3 ">
+    <div class="main-slider">
+        <div class="slide-text text-justify">
+            <h1>We Are Creative Nerds</h1>
+            <p>Boudin doner frankfurter pig. Cow shank bresaola pork landjaeger biltong beef ribs shankle chicken andouille.</p>
+            <a href="{% url 'main_app:login' %}" class="btn btn-common active">LOGIN</a>
+        </div>
+        <!--/Home Where we import content part-->
+    </div>
+    <div class="slider-forms slider-house form-group offset-md-3 text-center">
         <form cible="" method="POST" action="">
             {% csrf_token %}
             <div class="form-group">
@@ -22,9 +30,8 @@
             <div class="form-group">
                 <input type="text" class="form-control" id="InputInteret" placeholder="Centre d'interêt" name="centre_interet">
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Accepter les conditions de creations des cookies par notre services</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="InputInteret" placeholder="Êtes-vous Etudiant, Medecin, Agriculteur, Enseignant, etc..." name="profil">
             </div>
             <button type="submit" class="btn btn-lg btn-common" name="submit">Submit</button>
         </form>
