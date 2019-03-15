@@ -70,13 +70,13 @@
             {% if user.is_authenticated %}
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="dropdown"><a href="health.html">SANTE <i class="fa fa-angle-down"></i></a>
+                        <li class="active"><a href="{% url 'main_app:home' %}">Home</a></li>
+                        <li class="dropdown"><a href="{% url 'health_services:health_services' %}">SANTE <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="pharmacie.html">PHARMACIE DE GARDE</a></li>
-                                <li><a href="carnet.html">CARNET</a></li>
-                                <li><a href="medecin_naturelle.html">MEDECINE NATURELLE</a></li>
-                                <li><a href="premier_soin.html">PREMIERS SOINS</a></li>
+                                <li><a href="{% url 'health_services:pharmacie' %}">PHARMACIE DE GARDE</a></li>
+                                <li><a href="carnet.html">DOSSIER MEDICAL</a></li>
+                                <li><a href="{% url 'health_services:medecinenaturelle' %}">MEDECINE NATURELLE</a></li>
+                                <li><a href="{% url 'health_services:premiersoins' %}">PREMIERS SOINS</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="community.html">SERVICES RURAUX <i class="fa fa-angle-down"></i></a>

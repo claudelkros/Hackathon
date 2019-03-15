@@ -45,6 +45,16 @@ class MedecineNaturelle(models.Model):
     def __str__(self):
         return self.titre
 
+class PharmacieDeGarde(models.Model):
+    titre = models.CharField(max_length=300)
+    image = models.ImageField(upload_to="images/", default="", blank=True, null=True)
+    contenu = models.TextField(max_length=500)
+    date_pubication = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.titre
+
+
 class Maladie(models.Model):
     nommaladie = models.CharField(max_length=100)
     symtome = models.CharField(max_length=100)

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if title == 'Pharmacie de Garde' %}
+        <section id="blog" class="padding-top padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="masonery_area">
+                        {% for pharmacie in pharmacie_all %}
+                        <div class="col-md-12 col-sm-12">
+                            <div class="single-blog two-column">
+                                <div class="post-thumb">
+                                    {% load static %}
+                                    <a href="blogdetails.html"><img src="{{ pharmacie.image.url }}" class="img-responsive" alt=""></a>
+                                    <div class="post-overlay">
+                                        <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span>
+                                    </div>
+                                </div>
+                                <div class="post-content overflow">
+                                    <ul class="nav nav-justified post-nav">
+                                        <li><a href="#"><i class="fa fa-tag"></i>Santé</a></li>
+                                    </ul>
+                                    <h2 class="post-title bold"><a href="blogdetails.html">{{ pharmacie.titre }}</a></h2>
+                                    <h3 class="post-author"><a href="#">{{ pharmacie.date_pubication }}</a></h3>
+                                    <p>{{ pharmacie.contenu }}</p>
+                                    <a href="#" class="read-more">View More</a>
+                                    <div class="post-bottom overflow">
+                                        <ul class="nav nav-justified post-nav">
+                                            <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
+                                            <li><a href="#"><i class="fa fa-comments"></i>3 Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <p>Aucune Pharmacie cette semaine</p>
+    {% endif %}
+
+{% endblock %}
