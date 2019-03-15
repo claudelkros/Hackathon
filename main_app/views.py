@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from main_app.models import Utilisateur
+from main_app.models import Utilisateur, MedecineNaturelle
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
@@ -13,6 +13,7 @@ def index(request):
         return render(request, 'index.html', locals())
 
 def register(request):
+    error = False
     if request.user.is_authenticated:
         return redirect('main_app:home')
     else:
@@ -36,8 +37,11 @@ def register(request):
                 user.email = email
                 user.password = password
                 utilisateur.user = user
-                user.save()
-                utilisateur.save()
+                try:
+                    user.save()
+                    utilisateur.save()
+                except:
+                    error = True
                 return redirect('main_app:home')
         else:
             form = Utilisateur()
@@ -53,9 +57,14 @@ def home(request):
     if request.user.is_authenticated:
         username = Utilisateur.objects.get(user=request.user)
         title = 'Accueil'
+        medecinenaturelle_1 = MedecineNaturelle.objects.order_by('date_pubication')[0]
+        medecinenaturelle_2 = MedecineNaturelle.objects.order_by('date_pubication')[1]
+
         return render(request, 'main/home.html', locals())
     else:
         return redirect('main_app:login')
+
+
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('main_app:home')
