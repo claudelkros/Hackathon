@@ -21,3 +21,14 @@
 .bg-black{
     background-color: black;
 }
+.main-content {
+    margin-top: 50px;
+}
+.enews-block{
+    height: 195px;
+    overflow: hidden;
+}
+.health{
+    margin-top: 100px;
+    margin-left: 150px;
+}

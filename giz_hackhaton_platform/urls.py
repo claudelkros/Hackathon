@@ -26,4 +26,5 @@ urlpatterns = [
     path('', include('main_app.urls')),
     path('media_library_services', include('media_library_services.urls')),
     path('agri_services', include('agri_services.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('enews', include('enews.urls')),
+    ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -15,12 +15,14 @@
 <body>
 <div class="container-fluid bg-darkMagenta fg-white pos-fixed fixed-top z-top mb-5">
     <header class="app-bar container bg-darkMagenta fg-white pos-relative" data-role="appbar" data-expand-point="md">
-        <a href="index.html" class="brand fg-white no-hover"><strong>HACKATHON</strong></a>
+        <a href="{% url 'main_app:index' %}" class="brand fg-white no-hover"><strong>HACKATHON</strong></a>
     </header>
 </div>
-{% block content %}
+<div class="main-content">
+    {% block content %}
 
-{% endblock %}
+    {% endblock %}
+</div>
 
 {% load static %}
 <script src="{% static 'js/js/jquery-3.3.1.min.js' %}"></script>

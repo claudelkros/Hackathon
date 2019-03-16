@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 enews-header">
+                <img src="{{ new.image.url }}" alt="" style="height: 500px; width: 100%">
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+    <div class="row">
+            <div class="cell-8 offset-2">
+                <div class="lead text-justify">
+                    <strong><h1>{{ new.titre }}</h1></strong>
+                </div>
+                <div class="text-just">
+                    {{ new.contenu }}
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

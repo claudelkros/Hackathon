@@ -1,0 +1,31 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 bg-indigo enews-header">
+                {% load static %}
+                <img src="{% static 'images/coming-soon1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="row">
+            {% for all_new in all_news %}
+                <div class="mb-5 p-2 cell-2 offset-2 border">
+                    <div>
+                        <img src="{{ all_new.image.url }}" alt="" style="width: 100%">
+                    </div></div>
+                <div class="mb-5 p-2 cell-6">
+                    <div class="enews-block">
+                        <h5>{{ all_new.titre }}</h5>
+                        {{ all_new.contenu }}
+                    </div>
+                    <a href="{% url 'enews:lecture' all_new.id %}" class="button alert">Lire la suite ...</a>
+                    <p>{{ all_new.date_pubication }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

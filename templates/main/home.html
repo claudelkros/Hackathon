@@ -5,15 +5,15 @@
     <div class="row">
         <div class="cell-10 offset-1">
             <div class="tiles-grid">
-                <div data-role="tile" data-size="wide" class="text-center mif-medkit mif-10x icon bg-red">
+                <a href="{% url 'health_services:health_services' %}" data-role="tile" data-size="wide" class="text-center mif-medkit mif-10x icon bg-red fg-white">
                     <span class="branding-bar text-center"><h5>SANTE</h5></span>
-                </div>
+                </a>
                 <div data-role="tile" data-size="medium" class="text-center mif-credit-card mif-10x icon bg-orange">
                     <span class="branding-bar"><h5>E-PAYEMENT</h5></span>
                 </div>
-                <div data-role="tile" data-size="medium" class="text-center mif-news mif-10x icon">
+                <a href="{% url 'enews:enews' %}" data-role="tile" data-size="medium" class="text-center mif-news mif-10x icon">
                     <span class="branding-bar"><h5>E-NEWS</h5></span>
-                </div>
+                </a>
                 <div data-role="tile" data-size="large" class="text-center mif-home mif-10x icon bg-green">
                     <span class="branding-bar"><h5>SERVICES RURAUX</h5></span>
                 </div>
