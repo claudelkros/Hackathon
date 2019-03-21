@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 bg-indigo enews-header">
+                {% load static %}
+                <img src="{% static 'images/coming-soon1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="row">
+            {% for enew in enews %}
+                <div class="mb-5 p-2 cell-2 offset-2 border">
+                    <div>
+                        <img src="{{ enew.image.url }}" alt="" style="width: 100%">
+                    </div></div>
+                <div class="mb-5 p-2 cell-6">
+                    <div class="enews-block">
+                        <h5>{{ enew.titre }}</h5>
+                        {{ enew.contenu }}
+                    </div>
+                    <p>{{ enew.date_pubication }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = '5xhmv(rpgyq-c1^lxfer9p!fo)dp%(3g2@-3y=0+3!a-r29o5f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['d7a2e2cf.ngrok.io']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'agri_services.apps.AgriServicesConfig',
     'media_library_services.apps.MediaLibraryServicesConfig',
     'enews.apps.EnewsConfig',
+    'learning.apps.LearningConfig',
 ]
 
 MIDDLEWARE = [

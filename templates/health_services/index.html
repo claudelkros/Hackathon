@@ -11,21 +11,21 @@
     </div>
     <div class="health">
         <div class="tiles-grid">
-            <div data-role="tile" data-size="wide" class="text-center mif-book-reference mif-10x icon bg-indigo">
+            <a href="{% url 'health_services:dicomedical' %}" data-role="tile" data-size="wide" class="text-center mif-book-reference mif-10x icon bg-indigo">
                 <span class="branding-bar"><h5>DICTIONNAIRE MEDICAL</h5></span>
-            </div>
+            </a>
             <div data-role="tile" data-size="wide" class="text-center mif-folder mif-10x icon ">
                 <span class="branding-bar"><h5>DOSSIER MEDICAL</h5></span>
             </div>
-            <div data-role="tile" data-size="wide" class="text-center mif-florist mif-10x icon bg-green">
+            <a href="{% url 'health_services:medecinenaturelle' %}" data-role="tile" data-size="wide" class="text-center mif-florist mif-10x icon bg-green">
                 <span class="branding-bar"><h5>MEDECINE NATURELLE</h5></span>
-            </div>
-            <div data-role="tile" data-size="wide" class="text-center mif-ambulance mif-10x icon  bg-magenta" >
+            </a>
+            <a href="{% url 'health_services:pharmacie' %}" data-role="tile" data-size="wide" class="text-center mif-ambulance mif-10x icon  bg-magenta" >
                 <span class="branding-bar"><h5>PHARMACIE DE GARDE</h5></span>
-            </div>
-            <div data-role="tile" data-size="wide" class="text-center mif-help mif-10x icon">
+            </a>
+            <a href="{% url 'health_services:premiersoins' %}" data-role="tile" data-size="wide" class="text-center mif-help mif-10x icon">
                 <span class="branding-bar"><h5>PREMIER SOIN</h5></span>
-            </div>
+            </a>
         </div>
     </div>
 

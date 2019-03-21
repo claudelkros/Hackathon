@@ -1,46 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'template.html' %}
 
-{% block content %}
-
-    {% if title == 'Pharmacie de Garde' %}
-        <section id="blog" class="padding-top padding-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="masonery_area">
-                        {% for pharmacie in pharmacie_all %}
-                        <div class="col-md-12 col-sm-12">
-                            <div class="single-blog two-column">
-                                <div class="post-thumb">
-                                    {% load static %}
-                                    <a href="blogdetails.html"><img src="{{ pharmacie.image.url }}" class="img-responsive" alt=""></a>
-                                    <div class="post-overlay">
-                                        <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span>
-                                    </div>
-                                </div>
-                                <div class="post-content overflow">
-                                    <ul class="nav nav-justified post-nav">
-                                        <li><a href="#"><i class="fa fa-tag"></i>Santé</a></li>
-                                    </ul>
-                                    <h2 class="post-title bold"><a href="blogdetails.html">{{ pharmacie.titre }}</a></h2>
-                                    <h3 class="post-author"><a href="#">{{ pharmacie.date_pubication }}</a></h3>
-                                    <p>{{ pharmacie.contenu }}</p>
-                                    <a href="#" class="read-more">View More</a>
-                                    <div class="post-bottom overflow">
-                                        <ul class="nav nav-justified post-nav">
-                                            <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i>3 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
+{% block  content %}
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 bg-indigo enews-header">
+                {% load static %}
+                <img src="{% static 'images/coming-soon-bg.png' %}" alt="">
             </div>
-        </section>
-    {% else %}
-        <p>Aucune Pharmacie cette semaine</p>
-    {% endif %}
+        </div>
+    </div>
 
+    <div class="grid">
+        <div class="row">
+            {% for pharmacie in pharmacie_all %}
+                <div class="mb-5 p-2 cell-2 offset-2 border">
+                    <div>
+                        <img src="{{ pharmacie.image.url }}" alt="" style="width: 100%">
+                    </div></div>
+                <div class="mb-5 p-2 cell-6">
+                    <div class="enews-block">
+                        <h5>{{ pharmacie.titre }}</h5>
+                        {{ pharmacie.contenu }}
+                    </div>
+                    <span>{{ pharmacie.date_pubication }}</span>
+                    <span class="badge-top">Attesté par : {{ pharmacie.feedback_sante }} </span><small class="mif-thumbs-up"></small>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

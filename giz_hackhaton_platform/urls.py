@@ -27,4 +27,5 @@ urlpatterns = [
     path('media_library_services', include('media_library_services.urls')),
     path('agri_services', include('agri_services.urls')),
     path('enews', include('enews.urls')),
+    path('learning', include('learning.urls')),
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

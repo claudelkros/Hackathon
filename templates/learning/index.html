@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block  content %}
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 bg-indigo enews-header">
+                {% load static %}
+                <img src="{% static 'images/coming-soon1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="learning">
+        <div class="tiles-grid">
+            <a href="" data-role="tile" data-size="wide" class="text-center mif-school mif-10x icon bg-indigo">
+                <span class="branding-bar"><h5>ECOLES</h5></span>
+            </a>
+            <a href="" data-role="tile" data-size="wide" class="text-center mif-home mif-10x icon ">
+                <span class="branding-bar"><h5>UNIVERSITE</h5></span>
+            </a>
+            <a href="{% url 'learning:learningNews' %}" data-role="tile" data-size="wide" class="text-center mif-florist mif-10x icon bg-green">
+                <span class="branding-bar"><h5>NEWS</h5></span>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -10,7 +10,7 @@ def index(request):
         return redirect('main_app:home')
     else:
         title = "Index"
-        return render(request, 'index.html', locals())
+        return render(request, 'main/home.html', locals())
 
 def register(request):
     error = False
@@ -57,9 +57,6 @@ def home(request):
     if request.user.is_authenticated:
         username = Utilisateur.objects.get(user=request.user)
         title = 'Accueil'
-        medecinenaturelle_1 = MedecineNaturelle.objects.order_by('date_pubication')[0]
-        medecinenaturelle_2 = MedecineNaturelle.objects.order_by('date_pubication')[1]
-
         return render(request, 'main/home.html', locals())
     else:
         return redirect('main_app:login')
@@ -82,5 +79,6 @@ def login_view(request):
         title = 'Login'
     return render(request, 'main/login.html', locals())
 
-def sante(request):
-    pass
+def profil_view(request):
+    username = Utilisateur.objects.get(user=request.user)
+    return render(request, 'main/profil.html', locals())

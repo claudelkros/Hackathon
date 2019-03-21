@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>HACKATHON - {{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/css/metro-all.min.css' %}">
@@ -16,6 +16,15 @@
 <div class="container-fluid bg-darkMagenta fg-white pos-fixed fixed-top z-top mb-5">
     <header class="app-bar container bg-darkMagenta fg-white pos-relative" data-role="appbar" data-expand-point="md">
         <a href="{% url 'main_app:index' %}" class="brand fg-white no-hover"><strong>HACKATHON</strong></a>
+        <ul class="app-bar-menu ml-auto text-upper">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'main_app:profil' %}">{{ username }}</a></li>
+            <li><a href="{% url 'main_app:logout' %}">Déconnexion</a></li>
+            <li><a href="examples.html"></a></li>
+            <li><a href="support.html" class="text-bold fg-yellow"><span class="d-block ani-vertical"></span></a></li>
+            <li><a href="https://forum.metroui.org.ua"></a>
+            {% endif %}
+        </ul>
     </header>
 </div>
 <div class="main-content">
@@ -24,6 +33,18 @@
     {% endblock %}
 </div>
 
+
+
+
+<footer>
+    <div class="grid">
+        <div class="row">
+            <div class="cell-12 fg-white bg-black">
+                <p>Plateforme Communautaire</p>
+            </div>
+        </div>
+    </div>
+</footer>
 {% load static %}
 <script src="{% static 'js/js/jquery-3.3.1.min.js' %}"></script>
 {% load static %}

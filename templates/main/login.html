@@ -1,24 +1,34 @@
-{% extends 'base.html' %}
+{% extends 'template.html' %}
 {% block content %}
-    <div class="main-slider">
-        <div class="slide-text text-justify">
-            <h1>We Are Creative Nerds</h1>
-            <p>Boudin doner frankfurter pig. Cow shank bresaola pork landjaeger biltong beef ribs shankle chicken andouille.</p>
-            <a href="{% url 'main_app:register' %}" class="btn btn-common">SIGN UP</a>
+    <div class="section-login p-5">
+        <div class="grid">
+            <div class="row">
+                <div class="cell-8 offset-2">
+                    <h4>Soyez encore des notre</h4>
+                    <p>Venez non seulement partager, mais aussi construire votre communauté, alors <a href="{% url 'main_app:register' %}" class="text-danger">rejoigez-nous</a></p>
+                </div>
+            </div>
+            <!--/Home Where we import content part-->
         </div>
-        <!--/Home Where we import content part-->
-    </div>
-    <div class="slider-forms__login slider-house form-group offset-md-3 text-center">
-        <form cible="" method="POST" action="">
-            {% csrf_token %}
-            <div class="form-group">
-                <input type="text" class="form-control" id="InputNom" aria-describedby="NomHelp" placeholder="Entrez votre nom d'utilisateur" name="username" required>
+        <div class="grid text-center">
+            <div class="row">
+                <div class="cell-8 offset-2">
+                    <form cible="" method="POST" action="" class="form-group">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="InputNom" aria-describedby="NomHelp" placeholder="Entrez votre nom d'utilisateur" name="username" required>
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password" required>
+                        </div>
+                        <br><br>
+                        <button type="submit" class="button fg-white bg-cyan" name="submit">Connexion</button>
+                        <br>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-lg btn-common" name="submit">Submit</button>
-        </form>
-    </div>
+        </div>
 
+    </div>
 {% endblock %}

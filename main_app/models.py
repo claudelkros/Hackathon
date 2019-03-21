@@ -45,6 +45,24 @@ class MedecineNaturelle(models.Model):
     def __str__(self):
         return self.titre
 
+class Premiersoins(models.Model):
+    titre = models.CharField(max_length=300)
+    image = models.ImageField(upload_to="images/", default="", blank=True, null=True)
+    contenu = models.TextField(max_length=15000)
+    date_pubication = models.DateTimeField(null=True, blank=True)
+    feedback_sante = models.IntegerField(default=100)
+
+    def __str__(self):
+        return self.titre
+
+class Dicomedical(models.Model):
+    nom = models.CharField(max_length=300)
+    image = models.ImageField(upload_to="images/", default="", blank=True, null=True)
+    description = models.TextField(max_length=15000)
+
+    def __str__(self):
+        return self.nom
+
 class New(models.Model):
     titre = models.CharField(max_length=500)
     image = models.ImageField(upload_to="images/", default="", blank=True, null=True)
@@ -54,6 +72,32 @@ class New(models.Model):
 
     def __str__(self):
         return self.titre
+
+class Enew(models.Model):
+    titre = models.CharField(max_length=500)
+    image = models.ImageField(upload_to="images/", default="", blank=True, null=True)
+    contenu = models.TextField(max_length=150000)
+    date_pubication = models.DateTimeField(null=True, blank=True)
+    feedback_sante = models.IntegerField(default=100)
+
+    def __str__(self):
+        return self.titre
+
+class Ecole(models.Model):
+    nom = models.CharField(max_length=500)
+    file = models.FileField(upload_to="file/", default="", blank=True, null=True)
+    description = models.TextField(max_length=150000)
+    date_pubication = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.nom
+
+class Universite(models.Model):
+    nom = models.CharField(max_length=500)
+    file = models.FileField(upload_to="file/", default="", blank=True, null=True)
+    description = models.TextField(max_length=150000)
+    date_pubication = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.nom
 
 class PharmacieDeGarde(models.Model):
     titre = models.CharField(max_length=300)

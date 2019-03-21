@@ -29,6 +29,18 @@
     overflow: hidden;
 }
 .health{
-    margin-top: 100px;
+    margin-top: 90px;
     margin-left: 150px;
+    padding: 50px;
+}
+.learning{
+     margin-top: 90px;
+    margin-left: 150px;
+    padding: 50px;
+}
+.section-login{
+    margin-top: 150px;
+}
+footer{
+    height: 400px;
 }
